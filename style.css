@@ -34,7 +34,7 @@ body::before {
 }
 
 .regular-txt {
-    font-weight: ;
+    font-weight: 400;
 }
 
 .main-container {
@@ -138,4 +138,42 @@ body::before {
 
 .condition-item span {
     font-size: 30px;
+}
+
+.forecast-items-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: scroll;
+    padding-bottom: 12px;
+}
+.forecast-items-container::-webkit-scrollbar {
+    height: 8px;
+}
+.forecast-items-container::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0, 0.1) ;
+    border-radius: 99px;
+}
+
+.forecast-items-container::-webkit-scrollbar-thumb {
+    background: rgb(0, 0, 0, 0.15);
+    border-radius: 99px;
+}
+.forecast-item {
+    min-width: 120px;
+    background: rgb(255, 255, 255, 0.15);
+    display: flex;
+    gap: 6px;
+    padding: 10px;
+    align-items: center;
+    border-radius: 12px;
+    transition: 0.3s background; 
+}
+.forecast-item:hover {
+    background: rgb(255, 255, 255, 0.15);
+}
+
+.forecast-item-img {
+    width: 35px;
+    height: 35px;
+
 }
