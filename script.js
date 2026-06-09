@@ -57,9 +57,16 @@ async function updateWeatherInfo(city) {
         name: country,
         main: { temp, humidity },
         weather: [{ id, main }],
-        wind: speed
+        wind: { speed }
     } = weatherData;
 
+    countryTxt.textContent   = country
+    tempTxt.textContent = Math.round(temp) + ' °C'
+    conditionTxt.textContent = main
+    humidityValueTxt.textContent = humidity + '%'
+    windValueTxt.textContent = speed + 'M/s'
+
+    weatherSummaryImg.src = `ssets/weather/${getWeatherIcon()}`
 
     showDisplaySection(weatherInfoSection)
 }
