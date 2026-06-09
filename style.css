@@ -24,12 +24,15 @@ body {
 }
 
 body::before {
-    content: '';
-    position: absolute;
+     content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100dvh;
-    background: rgb(0, 0, 0, 0.15);
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(15px);
+    z-index: 0;
 
 }
 
@@ -41,15 +44,15 @@ body::before {
     border: none;
     width: 300px;
     height: 496px;
+    position: relative;
     z-index: 1;
-    background: linear-gradient(
-        to top, rgb(0, 0, 0, 0.15)
-    );
+    background: linear-gradient(to top, rgb(0, 0, 0, 0.15));
     border-radius: 12px;
     backdrop-filter: blur(100px);
     padding: 20px;
 
 }
+
 .input-container {
     position: relative;
     margin-bottom: 25px;
@@ -71,6 +74,7 @@ body::before {
     border: 3px solid rgb(0, 0, 0, 0.15);
 
 }
+
 .city-input::placeholder {
     color: rgb(255, 255, 255, 0.75);
 }
@@ -94,10 +98,10 @@ body::before {
 }
 
 .location-data-container {
-    display: flex;  
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
 }
 
 .location {
@@ -120,7 +124,7 @@ body::before {
 
 .weather-summary-info {
     text-align: end;
-    
+
 }
 
 .weather-conditions-container {
@@ -146,11 +150,13 @@ body::before {
     overflow-x: scroll;
     padding-bottom: 12px;
 }
+
 .forecast-items-container::-webkit-scrollbar {
     height: 8px;
 }
+
 .forecast-items-container::-webkit-scrollbar-track {
-    background: rgb(0, 0, 0, 0.1) ;
+    background: rgb(0, 0, 0, 0.1);
     border-radius: 99px;
 }
 
@@ -158,6 +164,7 @@ body::before {
     background: rgb(0, 0, 0, 0.15);
     border-radius: 99px;
 }
+
 .forecast-item {
     min-width: 120px;
     background: rgb(255, 255, 255, 0.15);
@@ -166,8 +173,9 @@ body::before {
     padding: 10px;
     align-items: center;
     border-radius: 12px;
-    transition: 0.3s background; 
+    transition: 0.3s background;
 }
+
 .forecast-item:hover {
     background: rgb(255, 255, 255, 0.15);
 }
@@ -176,4 +184,18 @@ body::before {
     width: 35px;
     height: 35px;
 
+}
+
+.section-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    margin-top: 25%;
+}
+
+.section-message img {
+    height: 180px;
+    width: auto;
 }

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 
@@ -20,7 +21,7 @@
             </button>
         </header>
 
-        <section class="weather-info">
+        <section class="weather-info" style="display: none;">
             <div class="location-data-container">
                 <div class="location">
                     <span class="material-symbols-outlined">
@@ -48,7 +49,7 @@
                         <h5 class="humidity-value-txt">55%</h5>
                     </div>
                 </div>
-                 <div class="condition-item">
+                <div class="condition-item">
                     <span class="material-symbols-outlined">
                         air
                     </span>
@@ -57,11 +58,11 @@
                         <h5 class="humidity-value-txt">2 M/s</h5>
                     </div>
                 </div>
-        
+
             </div>
 
-            
-               
+
+
             <div class="forecast-items-container">
                 <div class="forecast-item">
                     <h5 class="forecast-item-data regular-txt">05 Aug </h5>
@@ -89,9 +90,31 @@
                     <h5 class="forecast-item-temp">29 °C</h5>
                 </div>
             </div>
-
         </section>
+
+        <section class="search-city section-message" style="display: none;">
+            <img class="message-img" src="assets/message/search-city.png">
+            <div>
+                <h1>Search city</h1>
+                <h4 class="regular-txt">
+                    Find out the weather conditions of your city
+                </h4>
+            </div>
+        </section>
+
+        <section class="not-found section-message" >
+            <img class="message-img" src="assets/message/not-found.png">
+            <div>
+                <h1>Search city</h1>
+                <h4 class="regular-txt">
+                    Find out the weather conditions of your city
+                </h4>
+            </div>
+        </section>
+
     </main>
+
+
 </body>
 
 </html>
