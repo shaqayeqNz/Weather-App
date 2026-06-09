@@ -39,11 +39,11 @@ cityInput.addEventListener('keydown', (event) => {
 
 })
 
-async function getFetchData() {
-    const apiUrl = `https://api.openweathermap.org/data/2.5/${endPoint}?q=${city}&appid=${apiKey}&units=metric`
+async function getFetchData(endpoint, city) {
+    const apiUrl = `https://api.openweathermap.org/data/2.5/${endpoint}?q=${city}&appid=${apiKey}&units=metric`
 
-    const respones = await fetch(apiUrl)
-    return Response.json()
+    const response = await fetch(apiUrl)
+    return response.json()
 }
 
 function getWeatherIcon(id) {
