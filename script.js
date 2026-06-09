@@ -11,7 +11,7 @@ const conditionTxt = document.querySelector('.condition-txt')
 const humidityValueTxt = document.querySelector('.humidity-value-txt')
 const windValueTxt = document.querySelector('.wind-value-txt')
 const weatherSummaryImg = document.querySelector('.weather-summary-img')
-const currentDataTxt = document.querySelector('.current-data-txt')
+const currentDateTxt = document.querySelector('.current-date-txt')
 
 const apiKey = '95c311ad16e212c1db723fceb9eaf85b'
 
@@ -44,7 +44,27 @@ async function getFetchData() {
     return Response.json()
 }
 
+function getWeatherIcon(id) {
+    if (id <= 232) return 'thunderstorm.svg'
+    if (id <= 321) return 'drizzle.svg'
+    if (id <= 531) return 'rain.svg'
+    if (id <= 622) return 'snow.svg'
+    if (id <= 781) return 'atmosphere.svg'
+    if (id <= 800) return 'clear.svg'
+    else return 'clouds.svg'
+}
 
+
+function getCurrentDate() {
+    const currentDate = new Date()
+    const options = {
+        weekday: 'short',
+        day: '2-digit',
+        month: 'short'
+    }
+    
+    return currentDate.toLocaleDateString('en-GB', options)
+}
 async function updateWeatherInfo(city) {
     const weatherData = await getFetchData('weather', city)
 
@@ -66,7 +86,8 @@ async function updateWeatherInfo(city) {
     humidityValueTxt.textContent = humidity + '%'
     windValueTxt.textContent = speed + 'M/s'
 
-    weatherSummaryImg.src = `ssets/weather/${getWeatherIcon()}`
+    currentDateTxt.textContent = getCurrentDate()
+    weatherSummaryImg.src = `ssets/weather/${getWeatherIcon(id)}`
 
     showDisplaySection(weatherInfoSection)
 }
