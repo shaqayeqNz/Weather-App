@@ -92,7 +92,7 @@ async function updateWeatherInfo(city) {
 
     weatherSummaryImg.src = `assets/weather/${getWeatherIcon(id)}`
 
-    await updateForecastInfo()
+    await updateForecastInfo(city)
     showDisplaySection(weatherInfoSection)
 }
 
